@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Document Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="logo">
+                <div class="logo-icon">✦</div>
+
+                <div>
+                    <h1>AI Document Assistant</h1>
+                    <p>Ask questions from your documents</p>
+                </div>
+            </div>
+
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                System Ready
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+
+                <div class="section-title">
+                    <h2>Upload Document</h2>
+                    <p>
+                        Upload a PDF and let the AI analyze its contents.
+                    </p>
+                </div>
+
+                <div class="upload-box" id="uploadBox">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <h3>Drop your PDF here</h3>
+
+                    <p>
+                        or click the button below to browse your files
+                    </p>
+
+                    <input
+                        type="file"
+                        id="pdfInput"
+                        accept=".pdf"
+                        hidden
+                    >
+
+                    <button
+                        type="button"
+                        class="upload-button"
+                        id="uploadButton">
+                        Choose PDF
+                    </button>
+
+                    <p class="file-limit">
+                        Maximum file size: 20 MB
+                    </p>
+
+                </div>
+
+
+                <!-- Uploaded File -->
+                <div
+                    class="file-info"
+                    id="fileInfo"
+                    style="display: none;">
+
+                    <div class="file-icon">
+                        📑
+                    </div>
+
+                    <div class="file-details">
+
+                        <strong id="fileName">
+                            Document.pdf
+                        </strong>
+
+                        <span id="fileStatus">
+                            Ready to process
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="remove-button"
+                        id="removeFile">
+                        ✕
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Question Section -->
+            <section class="question-section">
+
+                <div class="section-title">
+                    <h2>Ask Your Question</h2>
+
+                    <p>
+                        Ask anything related to the uploaded document.
+                    </p>
+                </div>
+
+
+                <div class="question-box">
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="e.g. What is this document about?"
+                        rows="3">
+                    </textarea>
+
+                    <div class="question-footer">
+
+                        <span class="hint">
+                            Answers are generated only from your document.
+                        </span>
+
+                        <button
+                            type="button"
+                            class="ask-button"
+                            id="askButton">
+
+                            Ask AI
+                            <span>➜</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Loading -->
+            <div
+                class="loading"
+                id="loading"
+                style="display: none;">
+
+                <div class="loader"></div>
+
+                <span>
+                    Searching your document...
+                </span>
+
+            </div>
+
+
+            <!-- Answer Section -->
+            <section
+                class="answer-section"
+                id="answerSection"
+                style="display: none;">
+
+                <div class="answer-header">
+
+                    <div class="answer-title">
+                        <span class="ai-icon">✦</span>
+
+                        <div>
+                            <h2>AI Answer</h2>
+                            <p>Generated from your document</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="answer-content"
+                    id="answerContent">
+
+                    <!-- Answer will appear here -->
+
+                </div>
+
+
+                <!-- Sources -->
+                <div class="sources-section">
+
+                    <h3>
+                        📚 Sources
+                    </h3>
+
+                    <div id="sourcesContainer">
+
+                        <!-- Sources will be inserted by JavaScript -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- OCR Information -->
+            <section class="ocr-section">
+
+                <div class="ocr-icon">
+                    🔍
+                </div>
+
+                <div>
+
+                    <h3>OCR Support</h3>
+
+                    <p>
+                        Image-based PDFs are processed using OCR
+                        to extract text before generating embeddings.
+                    </p>
+
+                </div>
+
+                <span class="ocr-badge">
+                    Enabled
+                </span>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                AI Document Assistant
+                <span>•</span>
+                RAG + Pinecone + Sentence Transformers + OCR
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
