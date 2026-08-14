@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME:rag-pinecone-assistant
+  AZURE_WEBAPP_NAME: rag-pinecone-assistant
   AZURE_WEBAPP_PACKAGE_PATH: .
 
 jobs:
