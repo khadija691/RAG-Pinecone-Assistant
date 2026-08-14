@@ -1,3 +1,5 @@
+Flask
+gunicorn
 streamlit
 pymupdf
 langchain-text-splitters
@@ -8,4 +10,3 @@ python-dotenv
 azure-cognitiveservices-speech
 pillow
 pytesseract
-gunicorn
