@@ -1,9 +1,11 @@
-Flask
+streamlit
 pymupdf
+langchain-text-splitters
 sentence-transformers
 pinecone
 openai
 python-dotenv
-pytesseract
+azure-cognitiveservices-speech
 pillow
+pytesseract
 gunicorn
