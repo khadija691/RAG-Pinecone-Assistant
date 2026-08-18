@@ -59,6 +59,7 @@ def retrieve(
     "explain the content of the images in the pdf",
     "how to fill this pdf",
     "advantages and disadvantages of the content in the pdf",
+    "how many images are there in the pdf",
 
     ]
 
